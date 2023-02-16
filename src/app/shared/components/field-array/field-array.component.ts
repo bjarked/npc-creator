@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FieldArrayComponent  {
   @Input() title?:string;
   @Input() value:string[] = [];
+  @Input() viewOnly:boolean = false;
   @Output() valueChange:EventEmitter<string[]>= new EventEmitter<string[]>();
 
   constructor(){
@@ -17,15 +18,26 @@ export class FieldArrayComponent  {
     this.value.push("132")
   }
 
-  onChange(event:any) {
+  onChange() {
     this.valueChange.emit(this.value)
   }
   add() {
     this.value.push("")
+    this.valueChange.emit(this.value)
   }
 
   remove(index:number) {
     this.value.splice(index,1)
+    this.valueChange.emit(this.value)
+  }
+
+  update(event:any,index:number) {
+    console.log("Index" + index)
+    this.value[index] = event.target.value;
+    //this.valueChange.emit(this.value)
+  }
+  trackByIndex(index: number, obj: any): any {
+    return index;
   }
 
 }

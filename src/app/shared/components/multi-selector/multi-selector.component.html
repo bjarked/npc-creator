@@ -1,0 +1,8 @@
+<div class="container">
+  <div  class="option" *ngFor="let item of options" [class.selected]="selected.includes(item)" (click)="select(item)">
+    <p >
+      {{tostring(item)}}
+    </p>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+  justify-content: stretch;
+  border: 1px solid black;
+}
+.row p {
+  padding: 2px;
+  background-color: black;
+  color: orange;
+  width: 200px;
+}
+
+textarea {
+  padding: 2px;
+  padding-left: 5px;
+  color: white;
+  flex:1;
+  height: 100%;
+  font-size: 0.9rem;
+
+  background-color: var(--color-gray);
+}

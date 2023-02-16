@@ -1,0 +1,28 @@
+.option {
+  padding: 5px;
+  background-color: white;
+  color: orange;
+  cursor: pointer;
+}
+
+.option:hover {
+  color: black;
+
+}
+
+
+.option.selected {
+  background-color: black;
+}
+
+
+.option.selected:hover {
+  color: white;
+
+}
+
+.container{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

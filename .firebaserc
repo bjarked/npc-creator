@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "shadowrun-npc"
+  },
+  "targets": {
+    "shadowrun-npc": {
+      "hosting": {
+        "npc-creator": [
+          "shadowrun-npc"
+        ]
+      }
+    }
+  }
+}

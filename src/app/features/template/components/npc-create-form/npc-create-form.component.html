@@ -1,4 +1,5 @@
 <div class="form">
+  <app-field title="Name"  [(value)]="npc.name"></app-field>
   <app-characteristics-form [(characteristics)]="npc.characteristics"></app-characteristics-form>
   <app-field title="Initiative" [(value)]="npc.initiative"></app-field>
   <app-field title="Condition Monitor"  [(value)]="npc.conditionMonitor"></app-field>
@@ -6,6 +7,6 @@
   <app-field title="Armor"  [(value)]="npc.armour"></app-field>
   <app-field title="Skills"  [(value)]="npc.skills"></app-field>
   <app-field title="Qualities"  [(value)]="npc.qualities"></app-field>
-  <app-field-array title="Gear"></app-field-array>
+  <app-field-array title="Gear" [(value)]="npc.gear"></app-field-array>
   <app-button text="Save" (onClick)="save()"></app-button>
 </div>

@@ -7,8 +7,21 @@ export class Npc {
   armour:string = "0";
   skills:string = "";
   qualities:string = "";
-  gear:Gear[] = []
+  gear:string[] = []
 
+  static FromData(data:any):Npc {
+    const npc:Npc = new Npc();
+    npc.name = data.name;
+    npc.characteristics = Characteristics.FromData(data.characteristics);
+    npc.initiative = data.initiative;
+    npc.conditionMonitor = data.conditionMonitor;
+    npc.limits = Limits.FromData(data.limits);
+    npc.armour = data.armour;
+    npc.skills = data.skills;
+    npc.qualities = data.qualities;
+    npc.gear = data.gear;
+    return npc;
+  }
 }
 
 
@@ -36,12 +49,32 @@ export class Characteristics {
       this.edge = edge;
       this.magic = magic;
   }
+  static FromData(data:any):Characteristics {
+    return new Characteristics(
+      data.body,
+      data.agility,
+      data.reaction,
+      data.strength,
+      data.charisma,
+      data.intuition,
+      data.logic,
+      data.willpower,
+      data.edge,
+      data.magic,);
+  }
 }
 
 export class Limits {
   physical:number = 0;
   mental:number = 0;
   social:number = 0;
+  static FromData(data:any):Limits {
+    const limit = new Limits();
+    limit.physical = data.physical;
+    limit.mental = data.mental;
+    limit.social = data.social;
+    return limit;
+  }
 }
 
 export class Skill {
