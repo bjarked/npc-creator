@@ -1,0 +1,12 @@
+.form{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+app-button{
+  display: block;
+  margin: auto;
+}

@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  justify-content: stretch;
+  border: 1px solid black;
+}
+.title {
+  padding: 2px;
+  background-color: black;
+  color: orange;
+  width: 200px;
+}
+
+input {
+  padding: 2px;
+  padding-left: 5px;
+  color: white;
+  background-color: var(--color-gray);
+}
+.limit{
+  display: flex;
+  color: white;
+  background-color: var(--color-gray);
+  flex: 1;
+}
+.limit input{
+  width: 30px;
+  text-align: center;
+}

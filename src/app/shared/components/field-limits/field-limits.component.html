@@ -1,0 +1,15 @@
+<div class="row">
+  <p class="title">{{title}}</p>
+  <div class="limit">
+    <p>Physical</p>
+    <input type="number" [value]="value.physical" (change)="onPhyiscalChange($event)" />
+  </div>
+  <div class="limit">
+    <p>Mental</p>
+    <input type="number" [value]="value.mental" (change)="onMentalChange($event)" />
+  </div>
+  <div class="limit">
+    <p>Social</p>
+    <input type="number" [value]="value.social" (change)="onSocialChange($event)" />
+  </div>
+</div>
