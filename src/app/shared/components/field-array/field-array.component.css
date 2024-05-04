@@ -9,13 +9,14 @@
   width: 200px;
 }
 
-input {
+textarea {
   padding: 2px;
   padding-left: 5px;
   color: white;
   flex:1;
+  font-size: 0.9rem;
 
-  width: 210px;
+  min-width: 210px;
   background-color: var(--color-gray);
 }
 .field {

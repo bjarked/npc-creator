@@ -1,0 +1,12 @@
+a {
+  cursor: pointer;
+  background-color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: orange;
+  display: block;
+  width: fit-content;
+}
+a:hover {
+  background-color: white;
+}

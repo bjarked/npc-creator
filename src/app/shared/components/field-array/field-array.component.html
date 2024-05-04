@@ -1,10 +1,10 @@
 <div class="row">
   <p>{{title}}</p>
   <div class="container">
-    <div *ngFor="let item of value; let index = index" class="field">
-      <input  [value]="item" />
-      <app-button-small backgroundColor="red" text="Remove" (onClick)="remove(index)"></app-button-small>
+    <div *ngFor="let item of value; let index = index;trackBy:trackByIndex; " class="field">
+      <textarea [value]="item" (change)="update($event,index)" ></textarea>
+      <app-button-small  *ngIf="!viewOnly"  backgroundColor="red" text="Remove" (onClick)="remove(index)"></app-button-small>
     </div>
-    <app-button-small text="add" (onClick)="add()"></app-button-small>
+    <app-button-small *ngIf="!viewOnly" text="add" (onClick)="add()"></app-button-small>
   </div>
 </div>

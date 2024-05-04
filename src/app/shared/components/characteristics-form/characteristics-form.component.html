@@ -1,0 +1,26 @@
+<table>
+  <tr class="header">
+    <th  *ngIf="!viewOnly || characteristics.body">B</th>
+    <th  *ngIf="!viewOnly || characteristics.agility">A</th>
+    <th  *ngIf="!viewOnly || characteristics.reaction">R</th>
+    <th  *ngIf="!viewOnly || characteristics.strength">S</th>
+    <th  *ngIf="!viewOnly || characteristics.willpower">W</th>
+    <th  *ngIf="!viewOnly || characteristics.logic">L</th>
+    <th  *ngIf="!viewOnly || characteristics.intuition">I</th>
+    <th  *ngIf="!viewOnly || characteristics.charisma">C</th>
+    <th  *ngIf="!viewOnly || characteristics.edge">ESS</th>
+    <th  *ngIf="!viewOnly || characteristics.magic">M</th>
+  </tr>
+  <tr class="row">
+    <td  *ngIf="!viewOnly || characteristics.body"><input type="number" [(ngModel)]="characteristics.body" /></td>
+    <td  *ngIf="!viewOnly || characteristics.agility"><input type="number" [(ngModel)]="characteristics.agility" /></td>
+    <td  *ngIf="!viewOnly || characteristics.reaction"><input type="number" [(ngModel)]="characteristics.reaction" /></td>
+    <td  *ngIf="!viewOnly || characteristics.strength"><input type="number" [(ngModel)]="characteristics.strength" /></td>
+    <td  *ngIf="!viewOnly || characteristics.willpower"><input type="number" [(ngModel)]="characteristics.willpower" /></td>
+    <td  *ngIf="!viewOnly || characteristics.logic"><input type="number" [(ngModel)]="characteristics.logic" /></td>
+    <td  *ngIf="!viewOnly || characteristics.intuition"><input type="number" [(ngModel)]="characteristics.intuition" /></td>
+    <td  *ngIf="!viewOnly || characteristics.charisma"><input type="number" [(ngModel)]="characteristics.charisma" /></td>
+    <td  *ngIf="!viewOnly || characteristics.edge"><input type="number" [(ngModel)]="characteristics.edge" /></td>
+    <td  *ngIf="!viewOnly || characteristics.magic"><input type="number" [(ngModel)]="characteristics.magic" /></td>
+  </tr>
+</table>

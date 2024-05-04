@@ -1,0 +1,7 @@
+<div class="container">
+
+  <app-field title="Name" [(value)]="encounter.name" ></app-field>
+  <app-multi-selector [(selected)]="encounter.npcs" [options]="(npcService.npcs$ | async) || []" [tostring]="npcTostring"></app-multi-selector>
+  <app-button text="Save" (onClick)="save()"></app-button>
+
+</div>

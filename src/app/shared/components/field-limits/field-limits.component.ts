@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Limits } from 'src/app/features/home/model/npc.model';
+import { Limits } from 'src/app/core/models/npc.model';
 
 @Component({
   selector: 'app-field-limits',

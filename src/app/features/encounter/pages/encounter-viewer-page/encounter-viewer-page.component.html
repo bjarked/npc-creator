@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="sidepanel">
+    <app-button-header *ngFor="let enc of EncounterService.encounter$ | async" [text]="enc.name" (onClick)="select(enc)" ></app-button-header>
+
+  </div>
+  <div class="view">
+    <div class="npcs" *ngIf="selected">
+      <app-npc-viewer *ngFor="let npc of selected.npcs" [npc]="npc"></app-npc-viewer>
+
+    </div>
+
+  </div>
+
+</div>

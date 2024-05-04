@@ -3,6 +3,7 @@
 }
 
 a {
+  height: calc(100% - 10px);
   cursor: pointer;
   background-color: green;
   padding: 5px;
