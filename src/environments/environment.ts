@@ -14,7 +14,8 @@ export const environment = {
   production: false,
   collections: {
     npcs:"npcs",
-    encounters:"encounters"
+    encounters:"encounters",
+    tags:"tags"
   }
 };
 

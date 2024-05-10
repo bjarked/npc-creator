@@ -6,3 +6,16 @@
   align-items: center;
   gap: 20px;
 }
+.npcs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.npc-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+
+}

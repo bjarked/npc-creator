@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="sidepanel">
-    <app-button-header *ngFor="let enc of EncounterService.encounter$ | async" [text]="enc.name" (onClick)="select(enc)" ></app-button-header>
 
-  </div>
-  <div class="view">
+<app-page>
+  <app-left-sidebar>
+    <app-button type="simple" [selected]="(selected | async) == enc" [fullwidth]="true" *ngFor="let enc of EncounterService.encounter$ | async" [text]="enc.name"  (onClick)="select(enc)" ></app-button>
+  </app-left-sidebar>
+  <app-content>
     <div class="npcs" *ngIf="selected">
-      <app-npc-viewer *ngFor="let npc of selected.npcs" [npc]="npc"></app-npc-viewer>
-
+      <app-npc-viewer  *ngFor="let npc of selected | async | encounterNpcs" [npc]="npc"></app-npc-viewer>
     </div>
+  </app-content>
 
-  </div>
-
-</div>
+</app-page>

@@ -34,5 +34,8 @@ export class NpcCreateFormComponent implements OnInit {
     )
     console.log(this.npc)
   }
+  changeRandomRace() {
+    this.npc.race = this.npc.race ? undefined : "";
+  }
 
 }

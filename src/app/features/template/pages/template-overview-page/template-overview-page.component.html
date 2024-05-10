@@ -1,5 +1,5 @@
-<div class="overview">
-  <app-npc-viewer *ngFor="let npc of npcService.npcs$ |async" [npc]="npc"></app-npc-viewer>
-
-</div>
-
+<app-page>
+  <app-content>
+    <app-npc-viewer *ngFor="let npc of npcService.npcs$ |async" [npc]="npc"></app-npc-viewer>
+  </app-content>
+</app-page>

@@ -1,0 +1,12 @@
+.wrapper {
+  background-color: black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  min-height: calc(100vh - 62px);
+  box-sizing: border-box;
+  height: 100%;
+  width: 200px;
+}

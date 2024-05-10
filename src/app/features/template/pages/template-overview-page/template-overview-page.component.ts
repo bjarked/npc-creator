@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Npc } from 'src/app/core/models/npc.model';
 import { NpcService } from 'src/app/core/services/npc.service';
 
 @Component({

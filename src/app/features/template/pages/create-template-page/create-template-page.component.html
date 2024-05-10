@@ -1,2 +1,12 @@
+<app-page>
+  <app-left-sidebar>
+    <app-button type="simple" [selected]="_npc == npc" *ngFor="let _npc of npcService.npcs$ | async" [text]="_npc.name" [fullwidth]="true" (onClick)="select(_npc)" ></app-button>
 
-<app-npc-create-form></app-npc-create-form>
+    <div class="divider"></div>
+    <app-button type="simple" text="New" [fullwidth]="true" (onClick)="newNPC()"></app-button>
+  </app-left-sidebar>
+  <app-content>
+    <app-npc-create-form [npc]="npc"></app-npc-create-form>
+
+  </app-content>
+</app-page>

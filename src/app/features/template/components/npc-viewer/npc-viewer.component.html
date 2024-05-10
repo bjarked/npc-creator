@@ -1,11 +1,48 @@
 <div class="form">
-  <app-field title="Name"  [(value)]="npc.name"></app-field>
+  <div class="row">
+    <p class="field">Name : <span>{{npc.name}}</span></p>
+    <p class="field" *ngIf="npc.race" >Race : <span>{{npc.race}}</span></p>
+  </div>
   <app-characteristics-form [viewOnly]="true"  [(characteristics)]="npc.characteristics"></app-characteristics-form>
-  <app-field title="Initiative" [(value)]="npc.initiative"></app-field>
-  <app-field title="Condition Monitor"  [(value)]="npc.conditionMonitor"></app-field>
-  <app-field-limits title="Limits" [(value)]="npc.limits"></app-field-limits>
-  <app-field title="Armor"  [(value)]="npc.armour"></app-field>
-  <app-field-area title="Skills"  [(value)]="npc.skills"></app-field-area>
+  <div class="table coln-3 center-text">
+    <div class="coln">
+       <p class="header">Initiative</p>
+       <p>{{npc.useBasicStats ? npc.getBasicInitiative() : npc.initiative}}</p>
+    </div>
+    <div class="coln">
+       <p  class="header">Health</p>
+       <p>{{npc.useBasicStats ? npc.getBasicConditionMonitor() : npc.conditionMonitor}}</p>
+    </div>
+    <div class="coln">
+       <p class="header">Armor</p>
+       <p>{{npc.armour}}</p>
+    </div>
+  </div>
+  <div class="table coln-3 center-text">
+    <div class="coln">
+       <p class="header">Physical</p>
+       <p>{{npc.useBasicStats ? npc.getBasicLimitPhysical() : npc.limits.physical}}</p>
+    </div>
+    <div class="coln">
+       <p  class="header">Mental</p>
+       <p>{{npc.useBasicStats ? npc.getBasicLimitMental() : npc.limits.mental}}</p>
+    </div>
+    <div class="coln">
+       <p class="header">Social</p>
+       <p>{{npc.useBasicStats ? npc.getBasicLimitSocial() : npc.limits.social}}</p>
+    </div>
+  </div>
+  <div class="table">
+      <p class="header">Skills</p>
+      <div class="table grid coln-3">
+        <p class="small" *ngFor="let skill of npc.skills | split : ','">{{skill }}</p>
+      </div>
+  </div>
+  <div class="table">
+      <p class="header">Gear</p>
+      <div class="gear-rows">
+        <p class="small simple-row" *ngFor="let gear of npc.gear">{{gear}}</p>
+      </div>
+  </div>
   <app-field-area *ngIf="npc.qualities" title="Qualities"  [(value)]="npc.qualities"></app-field-area>
-  <app-field-array [viewOnly]="true" title="Gear" [(value)]="npc.gear"></app-field-array>
 </div>

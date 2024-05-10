@@ -1,7 +1,26 @@
-<div class="container">
 
-  <app-field title="Name" [(value)]="encounter.name" ></app-field>
-  <app-multi-selector [(selected)]="encounter.npcs" [options]="(npcService.npcs$ | async) || []" [tostring]="npcTostring"></app-multi-selector>
-  <app-button text="Save" (onClick)="save()"></app-button>
+<app-page>
+  <app-left-sidebar>
+    <app-button *ngFor="let e of (encounterService.encounter$ | async)" [fullwidth]="true"  [text]="e.name" [selected]="encounter == e" type="simple" (onClick)="editEncounter(e)"></app-button>
+    <div class="divider"></div>
+    <app-button text="new" type="simple" [fullwidth]="true"   (onClick)="newEncouter()"></app-button>
+  </app-left-sidebar>
 
-</div>
+  <app-content>
+    <app-field title="Name" [(value)]="encounter.name" ></app-field>
+
+    <app-encounter-makeup-form [(makeup)]="encounter.factionMakeUp"></app-encounter-makeup-form>
+
+    <div class="npcs">
+      <div *ngFor="let npc of encounter.npcs ; index as i" class="npc-row">
+        <p>{{npc.name}}</p>
+        <app-button text="Remove" (onClick)="removeNpc(i)" type="negativ"></app-button>
+      </div>
+    </div>
+    <app-button text="Save" (onClick)="save()"></app-button>
+  </app-content>
+
+  <app-right-sidebar>
+    <app-button *ngFor="let npc of (npcService.npcs$ | async)"  [fullwidth]="true" [text]="npc.name" type="simple" (onClick)="addNPC(npc)"></app-button>
+  </app-right-sidebar>
+</app-page>

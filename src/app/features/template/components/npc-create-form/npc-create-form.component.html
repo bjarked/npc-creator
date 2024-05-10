@@ -1,12 +1,17 @@
 <div class="form">
   <app-field title="Name"  [(value)]="npc.name"></app-field>
+  <app-field-checkmark title="Static Race" [value]="npc.race | exists" (valueChange)="changeRandomRace()"></app-field-checkmark>
+  <app-field-checkmark title="Use Basic Stats" [(value)]="npc.useBasicStats"></app-field-checkmark>
+  <app-field title="Race" *ngIf="npc.race != null"  [(value)]="npc.race"></app-field>
   <app-characteristics-form [(characteristics)]="npc.characteristics"></app-characteristics-form>
-  <app-field title="Initiative" [(value)]="npc.initiative"></app-field>
-  <app-field title="Condition Monitor"  [(value)]="npc.conditionMonitor"></app-field>
-  <app-field-limits title="Limits" [(value)]="npc.limits"></app-field-limits>
+  <app-field title="Initiative" *ngIf="!npc.useBasicStats" [(value)]="npc.initiative"></app-field>
+  <app-field title="Condition Monitor" *ngIf="!npc.useBasicStats" [(value)]="npc.conditionMonitor"></app-field>
+  <app-field-limits title="Limits" *ngIf="!npc.useBasicStats" [(value)]="npc.limits"></app-field-limits>
   <app-field title="Armor"  [(value)]="npc.armour"></app-field>
   <app-field title="Skills"  [(value)]="npc.skills"></app-field>
   <app-field title="Qualities"  [(value)]="npc.qualities"></app-field>
   <app-field-array title="Gear" [(value)]="npc.gear"></app-field-array>
   <app-button text="Save" (onClick)="save()"></app-button>
+
+  <app-tag-selector></app-tag-selector>
 </div>

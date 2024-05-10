@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  justify-content: stretch;
+  border: 1px solid black;
+}
+.row p {
+  padding: 2px;
+  background-color: black;
+  color: orange;
+  width: 200px;
+}
+
+input {
+  color: white;
+  width: 22px;
+  height: 22px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  padding-left: 5px;
+  flex: 1;
+  background-color: var(--color-gray);
+}

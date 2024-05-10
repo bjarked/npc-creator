@@ -12,7 +12,7 @@ import { NpcService } from 'src/app/core/services/npc.service';
 })
 export class EncounterCreatorPageComponent {
   encounter:Encounter = new Encounter();
-  constructor(public npcService:NpcService, private encounterService:EncounterService, private loading:LoadingService){
+  constructor(public npcService:NpcService, public encounterService:EncounterService, private loading:LoadingService){
 
   }
 
@@ -24,6 +24,21 @@ export class EncounterCreatorPageComponent {
     this.encounterService.CreateNewEncounter(this.encounter).finally(
       ()=> this.loading.stopLoading()
     )
+  }
+  addNPC(npc:Npc) {
+    this.encounter.npcs.push(npc);
+    console.log(npc.name);
+  }
+  removeNpc(index:number) {
+    this.encounter.npcs = this.encounter.npcs.filter((_,i) => i != index);
+  }
+
+  editEncounter(enc:Encounter) {
+    this.encounter = enc;
+  }
+
+  newEncouter() {
+    this.encounter = new Encounter();
 
   }
 

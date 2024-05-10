@@ -1,0 +1,21 @@
+<div>
+  <h1>Tags</h1>
+  <div class="selected-tag-container">
+    <div class="selected-tag" *ngFor="let tag of tags">
+      <span>{{tag}}</span>
+      <a class="remove" (click)="removeTag(tag)">x</a>
+    </div>
+  </div>
+
+
+  <div>
+    <a class="tag-option" *ngFor="let tagOption of tagsService.tags$ | async" (click)="addTag(tagOption)">
+      <span>{{tagOption}}</span>
+    </a>
+  </div>
+  <div>
+    <app-field [(value)]="newtagName" (onEnter)="createNewTag()"></app-field>
+    <app-button text="new" (onClick)="createNewTag()"></app-button>
+
+  </div>
+</div>

@@ -13,13 +13,14 @@ encounter$:BehaviorSubject<Encounter[]> = new BehaviorSubject<Encounter[]>([])
 
 constructor(private store:AngularFirestore) {
   firstValueFrom(this.store.collection(environment.collections.encounters).get()).then(
-    snapshot => this.encounter$.next(snapshot.docs.map(doc => Encounter.FromData(doc.data())))
+    snapshot => this.encounter$.next(snapshot.docs.map(doc => Encounter.FromData(doc.data(),doc.id)))
   )
  }
 
 
-CreateNewEncounter(enc:Encounter) {
-  return this.store.collection(environment.collections.encounters).doc(enc.name).set(ToSimpleObject(enc))
+  CreateNewEncounter(enc:Encounter) {
+    return this.store.collection(environment.collections.encounters).doc(enc.name).set(ToSimpleObject(enc));
+  }
 
-}
+
 }

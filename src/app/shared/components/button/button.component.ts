@@ -7,7 +7,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() text:string ="";
+  @Input() type: "positiv" | "negativ" | "simple" ="positiv";
+  @Input() selected:boolean = false;
+  @Input() fullwidth:boolean = false;
   @Output() onClick:EventEmitter<void> = new EventEmitter<void>();
+
 
   constructor() { }
 
@@ -17,5 +21,7 @@ export class ButtonComponent implements OnInit {
   Click() {
     this.onClick.emit();
   }
+
+
 
 }

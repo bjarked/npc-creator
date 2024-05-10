@@ -1,0 +1,19 @@
+.header {
+  padding: 10px;
+  width: calc(100% - 20px);
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .settings-btn{
+    color: var(--color-main);
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      color: var(--color-white);
+      transform: rotate(90deg);
+    }
+  }
+}

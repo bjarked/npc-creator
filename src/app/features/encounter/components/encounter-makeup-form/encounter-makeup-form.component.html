@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <h2>Faction Racial Makeup</h2>
+  <div class="container">
+
+    <div *ngFor="let m of makeup.makeup">
+      <p>{{m.race.name}}</p>
+      <input type="number" [value]="m.factor" (change)="updateValue($event,m.race.name)"/>
+    </div>
+
+  </div>
+
+
+</div>

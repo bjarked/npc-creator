@@ -25,6 +25,19 @@ import { NpcViewerComponent } from './features/template/components/npc-viewer/np
 import { FieldAreaComponent } from './shared/components/field-area/field-area.component';
 import { LoadingScreenComponent } from './core/components/loading-screen/loading-screen.component';
 import { MultiSelectorComponent } from './shared/components/multi-selector/multi-selector.component';
+import { EncounterNpcsPipe } from './features/encounter/pipes/encounter-npcs.pipe';
+import { RightSidebarComponent } from './shared/components/layout/right-sidebar/right-sidebar.component';
+import { PageComponent } from './shared/components/layout/page/page.component';
+import { ContentComponent } from './shared/components/layout/content/content.component';
+import { LeftSidebarComponent } from './shared/components/layout/left-sidebar/left-sidebar.component';
+import { IsClassPipe } from './shared/pipes/is-class.pipe';
+import { EncounterMakeupFormComponent } from './features/encounter/components/encounter-makeup-form/encounter-makeup-form.component';
+import { FieldCheckmarkComponent } from './shared/components/field-checkmark/field-checkmark.component';
+import { ExistsPipe } from './shared/pipes/exists.pipe';
+import { SplitPipe } from './shared/pipes/split.pipe';
+import { TagSelectorComponent } from './shared/components/tag-selector/tag-selector.component';
+import { SettingIconComponent } from './shared/assets/icons/setting-icon/setting-icon.component';
+import { DropdownMenuComponent } from './shared/components/dropdown-menu/dropdown-menu.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +59,20 @@ import { MultiSelectorComponent } from './shared/components/multi-selector/multi
     NpcViewerComponent,
     FieldAreaComponent,
     LoadingScreenComponent,
-    MultiSelectorComponent
+    MultiSelectorComponent,
+    EncounterNpcsPipe,
+    RightSidebarComponent,
+    PageComponent,
+    ContentComponent,
+    LeftSidebarComponent,
+    IsClassPipe,
+    EncounterMakeupFormComponent,
+    FieldCheckmarkComponent,
+    ExistsPipe,
+    SplitPipe,
+    TagSelectorComponent,
+    SettingIconComponent,
+    DropdownMenuComponent,
   ],
   imports: [
     BrowserModule,
