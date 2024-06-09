@@ -10,6 +10,7 @@ export class Npc {
   race? : string;
   useBasicStats: boolean = true;
   gear:string[];
+  standardActions:string[];
 
   getBasicInitiative() {
     return this.characteristics.reaction + this.characteristics.intuition + " + 1d6";
@@ -39,7 +40,8 @@ export class Npc {
       skills: string = "",
       qualities = "",
       race?:string ,
-      gear:string[] = []){
+      gear:string[] = [],
+      standardActions:string[] = []){
     this.name = name;
     this.characteristics = characteristics,
     this.initiative = initiative;
@@ -50,6 +52,7 @@ export class Npc {
     this.qualities =qualities;
     this.race =race;
     this.gear = gear;
+    this.standardActions = standardActions;
   }
 
   public deepCopy () :Npc {

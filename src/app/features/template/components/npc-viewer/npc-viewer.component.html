@@ -44,5 +44,11 @@
         <p class="small simple-row" *ngFor="let gear of npc.gear">{{gear}}</p>
       </div>
   </div>
+  <div class="table" *ngIf="npc.standardActions.length > 0">
+      <p class="header">Standard Actions</p>
+      <div class="gear-rows">
+        <p class="small simple-row" *ngFor="let action of npc.standardActions">{{action}}</p>
+      </div>
+  </div>
   <app-field-area *ngIf="npc.qualities" title="Qualities"  [(value)]="npc.qualities"></app-field-area>
 </div>

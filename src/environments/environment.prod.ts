@@ -10,6 +10,7 @@ export const environment = {
   production: true,
   collections: {
     npcs:"npcs",
-    encounters:"encounters"
+    encounters:"encounters",
+    tags:"tags"
   }
 };
