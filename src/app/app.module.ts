@@ -38,6 +38,10 @@ import { SplitPipe } from './shared/pipes/split.pipe';
 import { TagSelectorComponent } from './shared/components/tag-selector/tag-selector.component';
 import { SettingIconComponent } from './shared/assets/icons/setting-icon/setting-icon.component';
 import { DropdownMenuComponent } from './shared/components/dropdown-menu/dropdown-menu.component';
+import { EncoutnerToolboxComponent } from './features/encounter/components/encoutner-toolbox/encoutner-toolbox.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { NonEmptyPipe } from './shared/pipes/non-empty.pipe';
+import { StatusBoxComponent } from './features/encounter/components/status-box/status-box.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +77,10 @@ import { DropdownMenuComponent } from './shared/components/dropdown-menu/dropdow
     TagSelectorComponent,
     SettingIconComponent,
     DropdownMenuComponent,
+    EncoutnerToolboxComponent,
+    FilterPipe,
+    NonEmptyPipe,
+    StatusBoxComponent,
   ],
   imports: [
     BrowserModule,

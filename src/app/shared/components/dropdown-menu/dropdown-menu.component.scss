@@ -1,0 +1,13 @@
+:host {
+    position: relative;
+    width: 100%;
+    display: block;
+    .dropdown-wrapper {
+        display: none;
+        position: absolute;
+        width: 100%;
+        &.open {
+            display: block;
+        }
+    }
+}

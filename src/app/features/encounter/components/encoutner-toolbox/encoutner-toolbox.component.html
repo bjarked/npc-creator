@@ -1,0 +1,14 @@
+<div class="toolbox-wrapper">
+    <div class="encounter-container">
+        <h2 *ngIf="battle.encounter$ | async as enc">{{enc.name}}</h2>
+        <app-field title="Encounter" class="simple"  (onSelected)="openEncounterSelector(true)" [instantChange]="true"  (valueChange)="encounterSearch.next($event)"></app-field>
+        <app-dropdown-menu [isOpen]="encounterSelectorMenuOpen" backgroundColor="white">        
+            <app-button type="simple" [fullwidth]="true" *ngFor="let enc of filteredEncounters | async" [text]="enc.name"  (onClick)="select(enc)" ></app-button>
+        </app-dropdown-menu>        
+    </div>
+    <div *ngIf="battle.encounter$ | async as enc" class="toolbox-container">
+        <app-button text="Next Phase" (onClick)="battle.nextPhase()"></app-button>
+        <app-button text="New Round" (onClick)="battle.newRound()"></app-button>
+        <app-button text="Refresh" (onClick)="battle.refresh()"></app-button>
+    </div>
+</div>
