@@ -20,4 +20,8 @@ export class EncounterViewerPageComponent {
     console.log("select")
     this.selected = battleNpc;
   }
+
+  orderNpcByInit (a:BattleNpc,b:BattleNpc) {
+    return b.currentInitiativ - a.currentInitiativ;
+  }
 }

@@ -3,11 +3,11 @@
 <app-encoutner-toolbox></app-encoutner-toolbox>
 <app-page *ngIf="battle.npcs$ | async  as npcs  ">
   <app-left-sidebar>    
-    <app-status-box  *ngFor="let npc of npcs " [npc]="npc" [selected]="npc == selected" (click)="select(npc)"></app-status-box >
+    <app-status-box  *ngFor="let npc of battle.npcs$ | orderby : orderNpcByInit | async " [npc]="npc" [selected]="npc == selected" (click)="select(npc)"></app-status-box >
   </app-left-sidebar>
   <app-content>
     <div class="npcs" >
-      <app-npc-viewer  *ngFor="let npc of npcs " [npc]="npc"></app-npc-viewer>
+      <app-npc-viewer  *ngFor="let npc of npcs " [selected]="npc == selected" [npc]="npc" (click)="select(npc)"></app-npc-viewer>
     </div>
   </app-content>
 </app-page>
