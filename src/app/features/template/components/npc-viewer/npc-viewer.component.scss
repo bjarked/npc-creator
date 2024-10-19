@@ -1,70 +1,80 @@
-.form{
-  width: 425px;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-main);
-  padding: 3px;
-
-}
-.row{
-  display: flex;
-  padding: 5px;
-  background-color: var(--color-main-contrast);
-  gap: 5px;
-  justify-content: space-between;
-  .header {
-    background-color: var(--color-main-contrast);
-    color: var(--color-main);
-  }
-}
-.table{
-  display: grid;
-  background-color: var(--color-gray);
-  &.coln-3 {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  &.grid {
-    background-color: var(--color-main-contrast);
-    gap: 5px;
-    > * {
+:host {
+  --this-color-main : var(--color-main);
+  --this-color-main-contrast : var(--color-main-contrast);
+  .form{
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--this-color-main);
+    padding: 3px;
+    &.selected {
+      --this-color-main : var(--color-white);
+    }
+  
+    .row{
+      display: flex;
+      padding: 5px;
+      background-color: var(--this-color-main-contrast);
+      gap: 5px;
+      justify-content: space-between;
+      .header {
+        background-color: var(--this-color-main-contrast);
+        color: var(--this-color-main);
+      }
+    }
+    .table{
+      display: grid;
       background-color: var(--color-gray);
+      &.coln-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      &.grid {
+        background-color: var(--this-color-main-contrast);
+        gap: 5px;
+        > * {
+          background-color: var(--color-gray);
+        }
+      }
+      > *:not(.coln), .coln > *{
+        padding: 5px;
+      }
+      .header {
+        background-color: var(--this-color-main-contrast);
+        color: var(--this-color-main);
+      }
+      p{
+        color: var(--color-white);
+      }
     }
-  }
-  > *:not(.coln), .coln > *{
-    padding: 5px;
-  }
-  .header {
-    background-color: var(--color-main-contrast);
-    color: var(--color-main);
-  }
-  p{
-    color: var(--color-white);
-  }
-}
-.field {
-  display: flex;
-  color: var(--color-main);
-  span {
-    font-weight: bold;
-
-  }
-}
-.center-text {
-  p {
-    text-align: center;
-  }
-}
-.gear-rows {
-  border-top: 1px solid var(--color-main);
-  .simple-row {
-    padding: 3px 0;
-    &:not(:first-child) {
-      border-top: 1px solid var(--color-main);
+    .field {
+      display: flex;
+      color: var(--this-color-main);
+      span {
+        font-weight: bold;
+    
+      }
     }
+    .center-text {
+      p {
+        text-align: center;
+      }
+    }
+    .gear-rows {
+      border-top: 1px solid var(--this-color-main);
+      .simple-row {
+        padding: 3px 0;
+        &:not(:first-child) {
+          border-top: 1px solid var(--this-color-main);
+        }
+      }
+    }
+  
   }
-}
+  
+  app-button{
+    display: block;
+    margin: auto;
+  }
+  
 
-app-button{
-  display: block;
-  margin: auto;
 }

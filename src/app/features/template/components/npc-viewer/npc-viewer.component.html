@@ -1,9 +1,9 @@
-<div class="form">
+<div class="form {{selected | isClass : 'selected'}}">
   <div class="row">
     <p class="field">Name : <span>{{npc.name}}</span></p>
     <p class="field" *ngIf="npc.race" >Race : <span>{{npc.race}}</span></p>
   </div>
-  <app-characteristics-form [viewOnly]="true"  [(characteristics)]="npc.characteristics"></app-characteristics-form>
+  <app-characteristics-form [viewOnly]="true" [selected]="selected" [(characteristics)]="npc.characteristics"></app-characteristics-form>
   <div class="table coln-3 center-text">
     <div class="coln">
        <p class="header">Initiative</p>

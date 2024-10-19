@@ -42,6 +42,7 @@ import { EncoutnerToolboxComponent } from './features/encounter/components/encou
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { NonEmptyPipe } from './shared/pipes/non-empty.pipe';
 import { StatusBoxComponent } from './features/encounter/components/status-box/status-box.component';
+import { OrderbyPipe } from './shared/pipes/orderby.pipe';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { StatusBoxComponent } from './features/encounter/components/status-box/s
     FilterPipe,
     NonEmptyPipe,
     StatusBoxComponent,
+    OrderbyPipe,
   ],
   imports: [
     BrowserModule,

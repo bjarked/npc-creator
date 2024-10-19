@@ -8,5 +8,6 @@ import { Npc } from 'src/app/core/models/npc.model';
 })
 export class NpcViewerComponent {
   @Input() npc:Npc = new Npc();
+  @Input() selected:boolean = false; 
 
 }

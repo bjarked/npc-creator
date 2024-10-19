@@ -1,0 +1,37 @@
+
+table {
+  border-collapse: collapse;
+  border: none;
+  --this-color-main : var(--color-main);
+  --this-color-main-contrast : var(--color-main-contrast);
+  &.selected {
+    --this-color-main : var(--color-white);
+  }
+  th, td {
+    padding: 2px;
+    border: none;
+    input {
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: none;
+    }
+  }
+  .header {
+    color: var(--this-color-main);
+    background-color: var(--this-color-main-contrast);
+    border-top: 3px solid var(--this-color-main);
+    border-bottom: 3px solid var(--this-color-main);
+  }  
+  .row {
+    color: var(--color-white);
+    background-color: var(--color-gray);
+    border-bottom: 3px solid var(--this-color-main);
+    input {
+      color: var(--color-white);
+      background-color:var(--color-gray);
+    
+    }
+  }
+}
+
