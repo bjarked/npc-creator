@@ -1,0 +1,13 @@
+<div class="status-box {{selected | isClass : 'selected'}}">
+    <h3>{{npc.name}}</h3>
+    <div class="health-wrapper">
+        <span>Health</span>
+        <span>{{npc.getBasicConditionMonitor()}}</span>
+        <span>/</span>
+        <span>{{npc.currentConditionMonitor}}</span>
+    </div>
+    <div class="initiativ-wrapper">
+        <span>{{npc.currentInitiativ}}</span>
+
+    </div>
+</div>

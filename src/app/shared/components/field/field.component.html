@@ -1,4 +1,4 @@
 <div class="row">
   <p>{{title}}</p>
-  <input type="text" [value]="value" (change)="onChange($event)" (keypress)="onKeypress($event)"/>
+  <input type="text" [value]="value" (change)="onChange($event)" (click)="click()" (blur)="unselected()" (keypress)="onKeypress($event)" (input)="onInputChange($event)"/>
 </div>

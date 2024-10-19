@@ -1,0 +1,29 @@
+:host {
+  &.simple {
+    .row {
+      gap: 5px;
+      p {
+      width: auto;
+    }
+  }
+  }
+  .row {
+    display: flex;
+    justify-content: stretch;
+    border: 1px solid black;
+    p {
+      padding: 2px;
+      background-color: black;
+      color: orange;
+      width: 200px;
+    }
+    input {
+      padding: 2px;
+      padding-left: 5px;
+      color: white;
+      flex:1; 
+      width: 100%;
+      background-color: var(--color-gray);
+    }
+  }
+} 

@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class DropdownMenuComponent {
   @Input() isOpen : boolean = false;
+  @Input() backgroundColor ?: string;
   @Output() isOpenChange : EventEmitter<boolean> = new EventEmitter<boolean>();
 
 }
