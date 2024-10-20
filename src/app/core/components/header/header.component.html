@@ -1,7 +1,7 @@
 <div class="header">
   <app-setting-icon class="settings-btn"></app-setting-icon>
-  <app-button-header (onClick)="navTo('create-template')" text="Create Template"></app-button-header>
-  <app-button-header (onClick)="navTo('template-overview')" text="Template Library"></app-button-header>
-  <app-button-header (onClick)="navTo('create-encouter')" text="Create Encounter"></app-button-header>
-  <app-button-header (onClick)="navTo('view-encouter')" text="View Encounter"></app-button-header>
+  <app-button-header (onClick)="navTo('create-template')" [selected]="currenthPath|equal:'create-template'" text="Create Template"></app-button-header>
+  <app-button-header (onClick)="navTo('template-overview')" [selected]="currenthPath|equal:'template-overview'" text="Template Library"></app-button-header>
+  <app-button-header (onClick)="navTo('create-encouter')" [selected]="currenthPath|equal:'create-encouter'" text="Create Encounter"></app-button-header>
+  <app-button-header (onClick)="navTo('view-encouter')" [selected]="currenthPath|equal:'view-encouter'" text="View Encounter"></app-button-header>
 </div>

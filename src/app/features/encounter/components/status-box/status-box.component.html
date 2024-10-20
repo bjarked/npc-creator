@@ -1,13 +1,31 @@
-<div class="status-box {{selected | isClass : 'selected'}}">
-    <h3>{{npc.name}}</h3>
-    <div class="health-wrapper">
+<div class="status-box {{selected | isClass : 'selected'}} {{npc.isDead() | isClass : 'dead'}}">
+    <div class="header">
+      <h3>{{npc.getName()}}</h3>
+        <span class="init-text">{{npc.currentInitiativ}}</span>
+    </div>
+    <div class="content-wrapper" *ngIf="selected || !npc.isDead()">
+
+      <div class="health-wrapper" >
         <span>Health</span>
         <span>{{npc.getBasicConditionMonitor()}}</span>
         <span>/</span>
         <span>{{npc.currentConditionMonitor}}</span>
-    </div>
-    <div class="initiativ-wrapper">
-        <span>{{npc.currentInitiativ}}</span>
-
+      </div>
+      <div class="section"
+      *ngIf="selected">
+        <app-condition-monitor
+        [maxHealth]="npc.getBasicConditionMonitor()"
+        [(currentHealth)]="npc.currentConditionMonitor"
+        ></app-condition-monitor>
+        <div class="tool-wrapper">
+          <app-icon-button (click)="npc.updateInitiativ(-5)"></app-icon-button>
+        </div>
+      </div>
+      <div class="status-wrapper" *ngIf="selected">
+        <div *ngFor="let status of npc.getStatuses()">
+          <span>{{status.name}}</span>
+          <span>{{status.message}}</span>
+        </div>
+      </div>
     </div>
 </div>

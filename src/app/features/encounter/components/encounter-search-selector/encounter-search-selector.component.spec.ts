@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EncoutnerToolboxComponent } from './encoutner-toolbox.component';
+import { EncoutnerToolboxComponent } from './encounter-search-selector.component';
 
 describe('EncoutnerToolboxComponent', () => {
   let component: EncoutnerToolboxComponent;

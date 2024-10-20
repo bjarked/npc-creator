@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { BehaviorSubject, filter, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private router:Router) {
-
+  public currenthPath:  BehaviorSubject<string> = new BehaviorSubject<string>("");
+  constructor(private router:Router,private route:ActivatedRoute) {
+    router.events.pipe(filter(event=>event instanceof NavigationEnd),map(event=>(event as NavigationEnd).url.substring(1))).subscribe(url => {
+      this.currenthPath.next(url);
+    })
   }
 
   navTo(path:string) {
-    this.router.navigate([path])
-
+    this.router.navigate([path]);
   }
 
 }

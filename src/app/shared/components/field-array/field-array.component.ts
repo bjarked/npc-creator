@@ -32,9 +32,7 @@ export class FieldArrayComponent  {
   }
 
   update(event:any,index:number) {
-    console.log("Index" + index)
     this.value[index] = event.target.value;
-    //this.valueChange.emit(this.value)
   }
   trackByIndex(index: number, obj: any): any {
     return index;

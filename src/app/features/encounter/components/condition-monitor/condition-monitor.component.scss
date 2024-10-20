@@ -1,0 +1,18 @@
+:host {
+  display: contents;
+  .condition-box-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+    gap: 5px;
+    padding: 10px 0px;
+    .condition-box {
+      background-color: white;
+      aspect-ratio: 1 / 1;
+      &.damaged {
+        background-color: gray;
+      }
+    }
+  }
+
+}

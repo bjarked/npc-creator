@@ -1,0 +1,20 @@
+.toolbox-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+app-npc-viewer {
+  &.dead {
+    display: none;
+  }
+}
+
+.npcs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}

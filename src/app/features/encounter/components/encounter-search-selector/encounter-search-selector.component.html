@@ -1,0 +1,8 @@
+
+<div class="encounter-container">
+    <h2 *ngIf="battle.encounter$ | async as enc">{{enc.name}}</h2>
+    <app-field title="Encounter" class="simple"  (onSelected)="openEncounterSelector(true)" [instantChange]="true"  (valueChange)="encounterSearch.next($event)"></app-field>
+    <app-dropdown-menu [isOpen]="encounterSelectorMenuOpen" backgroundColor="white">
+        <app-button type="simple" [fullwidth]="true" *ngFor="let enc of filteredEncounters | async" [text]="enc.name"  (onClick)="select(enc)" ></app-button>
+    </app-dropdown-menu>
+</div>

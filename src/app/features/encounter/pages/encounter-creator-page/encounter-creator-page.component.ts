@@ -27,7 +27,6 @@ export class EncounterCreatorPageComponent {
   }
   addNPC(npc:Npc) {
     this.encounter.npcs.push(npc);
-    console.log(npc.name);
   }
   removeNpc(index:number) {
     this.encounter.npcs = this.encounter.npcs.filter((_,i) => i != index);

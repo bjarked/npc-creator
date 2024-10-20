@@ -34,7 +34,6 @@ export class FieldComponent {
 
   onKeypress(event:any) {
     if (event.key === "Enter") {
-      console.log("On enter")
       this.onChange(event);
       setTimeout(()=> this.onEnter.emit(),0);
     }

@@ -12,12 +12,6 @@ export class NpcCreateFormComponent implements OnInit {
   @Input() npc:Npc = new Npc();
 
   constructor(private npcService:NpcService, private loadingService:LoadingService) {
-    npcService.npcs$.subscribe(
-      npcs => {
-        console.log("Npc's");
-        console.log(npcs);
-      }
-    )
   }
 
   ngOnInit(): void {
@@ -32,7 +26,6 @@ export class NpcCreateFormComponent implements OnInit {
     ).finally(
       ()=> this.loadingService.stopLoading()
     )
-    console.log(this.npc)
   }
   changeRandomRace() {
     this.npc.race = this.npc.race ? undefined : "";

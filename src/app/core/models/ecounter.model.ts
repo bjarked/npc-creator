@@ -9,8 +9,6 @@ export class Encounter {
   factionMakeUp: FactionMakeUp = new FactionMakeUp(defaultMakeup);
 
   static FromData(data:any, id?:string):Encounter{
-    console.log("From Data");
-    console.log(data)
     const enc = new Encounter();
     enc.name = data.name;
     enc.id = data.id;
@@ -44,12 +42,8 @@ export class FactionMakeUp {
   }
 
   public getRandomRace () : RaceModifer {
-    console.log(this.makeup)
     const totalFactor = this.makeup.reduce( (pre,next) => pre + next.factor,0);
-    console.log("Faktor");
-    console.log(totalFactor);
     const randomValue:number = CreateRandomNumber(totalFactor);
-    console.log(randomValue);
     let accumalatedFaktor = 0;
     for (let i = 0; i < this.makeup.length; i++) {
       const race = this.makeup[i];

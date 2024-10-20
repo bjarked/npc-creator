@@ -8,20 +8,26 @@ import { BattleNpc } from '../../modals/battle-npc.model';
 @Component({
   selector: 'app-encounter-viewer-page',
   templateUrl: './encounter-viewer-page.component.html',
-  styleUrls: ['./encounter-viewer-page.component.css']
+  styleUrls: ['./encounter-viewer-page.component.scss']
 })
 export class EncounterViewerPageComponent {
   public selected: BattleNpc | null  = null;
+  public reinforcementOpen : boolean = false;
 
   constructor(public EncounterService:EncounterService,public battle:BattleService){
 
   }
   select (battleNpc:BattleNpc) {
-    console.log("select")
     this.selected = battleNpc;
   }
 
   orderNpcByInit (a:BattleNpc,b:BattleNpc) {
     return b.currentInitiativ - a.currentInitiativ;
+  }
+  orderNpcByName (a:BattleNpc,b:BattleNpc) {
+    return a.name.localeCompare(b.name);
+  }
+  toggleReinforcementSidebar() {
+    this.reinforcementOpen = !this.reinforcementOpen;
   }
 }

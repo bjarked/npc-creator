@@ -1,0 +1,17 @@
+.icon-button-wrapper {
+  --this-color-background : var(--color-white);
+  --this-color : var(--color-main);
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: block;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  background-color: var(--this-color-background);
+  color: var(--this-color);
+  &:hover {
+    --this-color-background : var(--color-main);
+    --this-color : var(--color-white);
+  }
+}

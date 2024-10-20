@@ -27,7 +27,6 @@ export class TagSelectorComponent {
   }
 
   addTag(tag:string) {
-    console.log(this.tags)
     if (!this.tags.includes(tag)){
       this.tags.push(tag);
       this.update();

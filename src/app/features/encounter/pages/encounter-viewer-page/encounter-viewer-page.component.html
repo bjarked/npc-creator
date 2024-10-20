@@ -1,13 +1,26 @@
 
 
-<app-encoutner-toolbox></app-encoutner-toolbox>
-<app-page *ngIf="battle.npcs$ | async  as npcs  ">
-  <app-left-sidebar>    
-    <app-status-box  *ngFor="let npc of battle.npcs$ | orderby : orderNpcByInit | async " [npc]="npc" [selected]="npc == selected" (click)="select(npc)"></app-status-box >
+<app-toolbox>
+  <app-encounter-search-selector></app-encounter-search-selector>
+  <div *ngIf="battle.encounter$ | async as enc" class="toolbox-container">
+    <app-button text="Reinforcement" (onClick)="toggleReinforcementSidebar()"></app-button>
+    <app-button text="Next Phase" (onClick)="battle.nextPhase()"></app-button>
+    <app-button text="New Round" (onClick)="battle.newRound()"></app-button>
+    <app-button text="Refresh" (onClick)="battle.refresh()"></app-button>
+  </div>
+</app-toolbox>
+<app-page *ngIf="battle.npcs$ | async as npcs">
+  <app-left-sidebar>
+    <app-status-box  *ngFor="let npc of npcs | orderby : orderNpcByInit  " [npc]="npc" [selected]="npc == selected" (click)="select(npc)"></app-status-box >
   </app-left-sidebar>
   <app-content>
     <div class="npcs" >
-      <app-npc-viewer  *ngFor="let npc of npcs " [selected]="npc == selected" [npc]="npc" (click)="select(npc)"></app-npc-viewer>
+      <app-npc-viewer  *ngFor="let npc of npcs | orderby : orderNpcByName" class="{{npc != selected && npc.isDead() | isClass : 'dead'}}" [selected]="npc == selected" [npc]="npc" (click)="select(npc)"></app-npc-viewer>
     </div>
   </app-content>
+  <app-right-sidebar *ngIf="reinforcementOpen">
+    <div *ngFor="let npc of (battle.encounter$ | async)?.getBasicReinforcements()">
+      <app-button [text]="npc.name" type="simple" [fullwidth]="true" (onClick)="battle.addReinforcement(npc)"> </app-button>
+    </div>
+  </app-right-sidebar>
 </app-page>

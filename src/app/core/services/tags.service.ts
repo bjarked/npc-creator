@@ -20,14 +20,11 @@ export class TagsService {
    }
 
    public async addNewTag(tag:string) {
-    console.log("addNewTag")
     const tags = await firstValueFrom(this.tags$);
     if (tags.includes(tag)) return;
     tags.push(tag);
     this.store.collection(environment.collections.tags).doc(environment.collections.tags).set(ToSimpleObject({ tags: tags })).then(
       (response) => {
-        console.log("response");
-        console.log(response);
         this.tags$.next(tags);
       }
     ).catch(error => { console.log(error); });

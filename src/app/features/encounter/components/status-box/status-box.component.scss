@@ -1,24 +1,52 @@
 :host {
     display: contents;
     .status-box {
-        border: 1px solid var(--color-main);
+        --this-color-main : var(--color-main);
+        --this-color-contrast : var(--color-main-contrast);
+        border: 1px solid var(--this-color-main);
         cursor: pointer;
-        color: var(--color-main);
+        color: var(--this-color-main);
         padding: 5px;
         width: 100%;
         border-radius: 2px;
         box-sizing: border-box;
         &.selected {
-            color: var(--color-white);
-            border-color: var(--color-white);
-
+          --this-color-main : var(--color-white);
         }
-        h3 {
-            font-size: 18px;
+        &.dead:not(.selected) {
+          --this-color-main : var(--color-main-dark);
+        }
+        .header {
+          display: flex;
+          justify-content: space-between;
+          h3 {
+              font-size: 18px;
+          }
+          .init-text {
+            padding: 4px;
+            background: var(--this-color-main);
+            color: var(--this-color-contrast);;
+            border-radius: 5px;
+            font-size: small;
+            font-weight: bold;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            flex-shrink: 0;
+          }
+        }
+        .section {
+          display: flex;
+          .tool-wrapper {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+          }
         }
         .health-wrapper {
             display: flex;
-            gap: 5px;
+            flex-wrap: wrap;
+            column-gap: 5px;
         }
     }
 }

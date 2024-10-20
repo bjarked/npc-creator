@@ -12,8 +12,10 @@ export class Npc {
   gear:string[];
   standardActions:string[];
 
-  getBasicInitiative() {
-    return this.characteristics.reaction + this.characteristics.intuition + " + 1d6";
+  getInitiative() {
+    return this.useBasicStats
+      ? this.characteristics.reaction + this.characteristics.intuition + " + 1d6"
+      : this.initiative;
   }
 
   getBasicLimitMental() {

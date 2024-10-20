@@ -38,11 +38,17 @@ import { SplitPipe } from './shared/pipes/split.pipe';
 import { TagSelectorComponent } from './shared/components/tag-selector/tag-selector.component';
 import { SettingIconComponent } from './shared/assets/icons/setting-icon/setting-icon.component';
 import { DropdownMenuComponent } from './shared/components/dropdown-menu/dropdown-menu.component';
-import { EncoutnerToolboxComponent } from './features/encounter/components/encoutner-toolbox/encoutner-toolbox.component';
+import { EncoutnerToolboxComponent } from './features/encounter/components/encounter-search-selector/encounter-search-selector.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { NonEmptyPipe } from './shared/pipes/non-empty.pipe';
 import { StatusBoxComponent } from './features/encounter/components/status-box/status-box.component';
 import { OrderbyPipe } from './shared/pipes/orderby.pipe';
+import { RepeatPipe } from './shared/pipes/repeat.pipe';
+import { ConditionMonitorComponent } from './features/encounter/components/condition-monitor/condition-monitor.component';
+import { SpeedBotsComponent } from './shared/assets/icons/speed-bots/speed-bots.component';
+import { IconButtonComponent } from './shared/components/icon-button/icon-button.component';
+import { EqualPipe } from './shared/pipes/equal.pipe';
+import { ToolboxComponent } from './shared/components/layout/toolbox/toolbox.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +89,12 @@ import { OrderbyPipe } from './shared/pipes/orderby.pipe';
     NonEmptyPipe,
     StatusBoxComponent,
     OrderbyPipe,
+    RepeatPipe,
+    ConditionMonitorComponent,
+    SpeedBotsComponent,
+    IconButtonComponent,
+    EqualPipe,
+    ToolboxComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,6 @@ export class FieldCheckmarkComponent {
 
   onChange(event:any) {
     this.value =event.target.checked;
-    console.log(this.value)
     this.valueChange.emit(this.value)
   }
 
