@@ -19,8 +19,11 @@
     </div>
   </app-content>
   <app-right-sidebar *ngIf="reinforcementOpen">
-    <div *ngFor="let npc of (battle.encounter$ | async)?.getBasicReinforcements()">
-      <app-button [text]="npc.name" type="simple" [fullwidth]="true" (onClick)="battle.addReinforcement(npc)"> </app-button>
-    </div>
+      <app-button  *ngFor="let npc of (battle.encounter$ | async)?.getBasicReinforcements()" 
+        [text]="npc.name" 
+        type="simple" 
+        [fullwidth]="true" 
+        (onClick)="battle.addReinforcement(npc)"
+      ></app-button>
   </app-right-sidebar>
 </app-page>
