@@ -1,0 +1,6 @@
+<a #btn (click)="Click()" class="{{selected | async | isClass : 'selected'}}">
+    <p>{{text}}</p>
+</a>
+<app-dropdown-menu [(isOpen)]="isOpen" [btn]="btnElement">    
+  <ng-content ></ng-content>
+</app-dropdown-menu>

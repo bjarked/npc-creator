@@ -1,3 +1,3 @@
-<div class=" dropdown-wrapper {{isOpen | isClass : 'open'}}" [style.backgroundColor]="backgroundColor">
+<div  #wrapper class=" dropdown-wrapper {{isOpen | isClass : 'open'}}" (click)="close()" [style.backgroundColor]="backgroundColor">
   <ng-content></ng-content>
 </div>

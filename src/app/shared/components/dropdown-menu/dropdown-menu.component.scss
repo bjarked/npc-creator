@@ -8,6 +8,7 @@
         width: 100%;
         &.open {
             display: block;
+            background-color: var(--color-main-contrast);
         }
     }
 }

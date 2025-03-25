@@ -1,0 +1,7 @@
+
+<a #btn class="btn" (click)="toggle()" >open</a>
+
+<app-dropdown-menu [(isOpen)]="isOpen" [btn]="btnElement">
+    <app-button-small text="Combat" (onClick)="changeType('combat')"></app-button-small>
+    <app-button-small text="Detection" (onClick)="changeType('detection')"></app-button-small>
+</app-dropdown-menu>

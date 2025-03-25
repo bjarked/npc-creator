@@ -49,6 +49,12 @@ import { SpeedBotsComponent } from './shared/assets/icons/speed-bots/speed-bots.
 import { IconButtonComponent } from './shared/components/icon-button/icon-button.component';
 import { EqualPipe } from './shared/pipes/equal.pipe';
 import { ToolboxComponent } from './shared/components/layout/toolbox/toolbox.component';
+import { ButtonHeaderDropdownComponent } from './shared/components/button-header-dropdown/button-header-dropdown.component';
+import { CreateSpellsComponent } from './features/armoury/spells/pages/create-spells/create-spells.component';
+import { SpellEditorComponent } from './features/armoury/spells/components/spell-editor/spell-editor.component';
+import { SpellTypeSelectorComponent } from './features/armoury/spells/components/spell-type-selector/spell-type-selector.component';
+import { CombatSpellEditorComponent } from './features/armoury/spells/components/spell-editor/combat-spell-editor/combat-spell-editor.component';
+import { DetectionSpellEditorComponent } from './features/armoury/spells/components/spell-editor/detection-spell-editor/detection-spell-editor.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +101,12 @@ import { ToolboxComponent } from './shared/components/layout/toolbox/toolbox.com
     IconButtonComponent,
     EqualPipe,
     ToolboxComponent,
+    ButtonHeaderDropdownComponent,
+    CreateSpellsComponent,
+    SpellEditorComponent,
+    SpellTypeSelectorComponent,
+    CombatSpellEditorComponent,
+    DetectionSpellEditorComponent,
   ],
   imports: [
     BrowserModule,
