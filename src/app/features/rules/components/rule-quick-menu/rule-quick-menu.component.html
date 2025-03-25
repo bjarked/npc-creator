@@ -1,0 +1,8 @@
+<div class="sidebar">
+  <h2>Rules</h2>
+  <app-button *ngFor="let rule of rulesService.rules$ | async" [text]="rule.name" (onClick)="select(rule)" [selected]="rule == selected"></app-button>
+</div>
+
+<div class="content" [ngClass]="selected ? 'open' : 'close'" #contentdiv >
+
+</div>

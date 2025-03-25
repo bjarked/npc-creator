@@ -1,0 +1,12 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .section-header {
+    display: flex;
+  }
+  .toolbox{
+    display: flex;
+    gap: 10px;
+  }
+}

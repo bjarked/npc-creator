@@ -1,6 +1,6 @@
 <div class="header">
   <app-setting-icon class="settings-btn"></app-setting-icon>
-  <app-button-header-dropdown text="Armoury" >    
+  <app-button-header-dropdown text="Armoury" >
     <app-button-header (onClick)="navTo('armoury/spells')" [selected]="currenthPath|equal:'create-template'" text="Spells"></app-button-header>
     <app-button-header (onClick)="navTo('armoury/weapons')" [selected]="currenthPath|equal:'create-template'" text="Weapons"></app-button-header>
     <app-button-header (onClick)="navTo('armoury/items')" [selected]="currenthPath|equal:'create-template'" text="Items"></app-button-header>
@@ -9,4 +9,6 @@
   <app-button-header (onClick)="navTo('template-overview')" [selected]="currenthPath|equal:'template-overview'" text="Template Library"></app-button-header>
   <app-button-header (onClick)="navTo('create-encouter')" [selected]="currenthPath|equal:'create-encouter'" text="Create Encounter"></app-button-header>
   <app-button-header (onClick)="navTo('view-encouter')" [selected]="currenthPath|equal:'view-encouter'" text="View Encounter"></app-button-header>
+  <app-button-header (onClick)="navTo('rules')" [selected]="currenthPath|equal:'rules'" text="Rules"></app-button-header>
+  <app-quick-menu></app-quick-menu>
 </div>

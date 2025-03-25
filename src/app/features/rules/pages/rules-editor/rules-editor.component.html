@@ -1,0 +1,24 @@
+
+<app-page *ngIf="rulesService.rules$ | async as rules">
+  <app-left-sidebar>
+    <app-button   *ngFor="let rule of rules" [selected]="rule == selected" [text]="rule.name" (click)="select(rule)"></app-button  >
+  </app-left-sidebar>
+  <app-content>
+    <div class="editor" *ngIf="selected">
+      <app-field title="Rule Title" [(value)]="selected.name"></app-field>
+      <div class="section" *ngFor="let section of selected.sections ; index as index;">
+        <div class="section-header">
+          <app-field title="Section" [(value)]="section.name"></app-field>
+          <app-button-small class="delete-section-btn" [backgroundColor]="'red'" (click)="removeSection(index)" text="Remove"></app-button-small>
+        </div>
+        <angular-editor [(ngModel)]="section.html"></angular-editor>
+
+      </div>
+      <app-button class="add-section-btn" (click)="addSection()" text="Add Section"></app-button>
+      <div class="toolbox">
+        <app-button class="delete-btn" [type]="'negativ'" (click)="delete(selected)" text="Delete"></app-button>
+        <app-button class="save-btn" (click)="save(selected)" text="Save"></app-button>
+      </div>
+    </div>
+  </app-content>
+</app-page>

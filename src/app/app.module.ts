@@ -55,6 +55,14 @@ import { SpellEditorComponent } from './features/armoury/spells/components/spell
 import { SpellTypeSelectorComponent } from './features/armoury/spells/components/spell-type-selector/spell-type-selector.component';
 import { CombatSpellEditorComponent } from './features/armoury/spells/components/spell-editor/combat-spell-editor/combat-spell-editor.component';
 import { DetectionSpellEditorComponent } from './features/armoury/spells/components/spell-editor/detection-spell-editor/detection-spell-editor.component';
+import { RulesEditorComponent } from './features/rules/pages/rules-editor/rules-editor.component';
+import { HttpClientModule } from '@angular/common/http';
+import { QuickMenuComponent } from './shared/components/layout/quick-menu/quick-menu.component';
+
+// External
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { RuleQuickMenuComponent } from './features/rules/components/rule-quick-menu/rule-quick-menu.component';
+import { LeftArrowComponent } from './shared/assets/icons/left-arrow/left-arrow.component';
 
 @NgModule({
   declarations: [
@@ -107,12 +115,18 @@ import { DetectionSpellEditorComponent } from './features/armoury/spells/compone
     SpellTypeSelectorComponent,
     CombatSpellEditorComponent,
     DetectionSpellEditorComponent,
+    RulesEditorComponent,
+    QuickMenuComponent,
+    RuleQuickMenuComponent,
+    LeftArrowComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularEditorModule,
+    HttpClientModule
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase },{ provide: REGION, useValue: 'europe-west1' }],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+<a class="burder-menu" (click)="toggle()">
+  <div></div>
+  <div></div>
+  <div></div>
+</a>
+
+<div class="quick-menu" *ngIf="isOpen">
+  <a class="close" (click)="toggle()">
+    <app-left-arrow></app-left-arrow>
+  </a>
+  <div >
+    <app-rule-quick-menu></app-rule-quick-menu>
+  </div>
+</div>

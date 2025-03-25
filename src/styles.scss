@@ -23,16 +23,15 @@ input {
 * {
   margin:  0;
   padding: 0;
-  font-size: 1.1rem;
-  font-family: 'Courier New', Courier, monospace;
 }
 a {
   display: block;
 }
 
 body {
-
+  font-size: 16px;
   background-color: oldlace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .divider {
@@ -45,9 +44,18 @@ body {
 
 /* fonts */
 p, span {
-  font-size: 18px;
+  font-size: 1em;
   &.small{
-    font-size: 15px;
+    font-size: 0.8em;
 
   }
+}
+
+/* external librairs */
+.angular-editor-textarea{
+  background-color: white;
+  ul{
+    padding-inline-start: 40px;
+  }
+
 }
