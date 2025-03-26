@@ -1,7 +1,9 @@
 
 <app-page *ngIf="rulesService.rules$ | async as rules">
   <app-left-sidebar>
-    <app-button   *ngFor="let rule of rules" [selected]="rule == selected" [text]="rule.name" (click)="select(rule)"></app-button  >
+    <app-button   *ngFor="let rule of rules" [selected]="rule == selected" [text]="rule.name" (click)="select(rule)" type="simple" [fullwidth]="true"></app-button  >
+    <div class="divider"></div>
+    <app-button text="new" type="simple" [fullwidth]="true"   (onClick)="newRule()"></app-button>
   </app-left-sidebar>
   <app-content>
     <div class="editor" *ngIf="selected">

@@ -39,4 +39,10 @@ export class RulesEditorComponent {
       this.selected = null;
     }
   }
+  public newRule() {
+    this.selected = {
+      name:"new rule",
+      sections:[]
+    };
+  }
 }
